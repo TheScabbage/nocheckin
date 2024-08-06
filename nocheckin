@@ -1,8 +1,13 @@
 #!/usr/bin/env sh
 
-# Check for "nocheckin" in staged changes
-if git diff --cached | grep -q "nocheckin"; then
-    echo "Commit rejected: 'nocheckin' found in staged changes."
+# Concat the trigger together to make it easier to
+# track this script itself
+TRIGGER_WORD="no"
+TRIGGER_WORD+="checkin"
+
+# Check for trigger word in staged changes
+if git diff --cached | grep -q "${TRIGGER_WORD}"; then
+    echo "Commit rejected: '${TRIGGER_WORD}' found in staged changes."
     exit 1
 fi
 
