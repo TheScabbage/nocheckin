@@ -1,17 +1,18 @@
 # Nocheckin
+
 A simple git hook that rejects any attempts to
 create a commit containing the phrase "nocheckin".
 
-# Dependencies
+## Dependencies
 - grep
 
-# Install
-## Per-repo
+## Install
+### Per-repo
 Place the `nocheckin` file in the `.git/hooks/` directory of
 the repository that you want it to apply to,
 and rename the file to `pre-commit`.
 
-## For all new repos
+### For all new repos
 Instead of the `.git/hooks/` directory of a repo like above,
 rename the file and place it in `~/.git-templates/hooks/`.
 
