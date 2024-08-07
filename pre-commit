@@ -6,7 +6,7 @@ TRIGGER_WORD="no"
 TRIGGER_WORD+="checkin"
 
 # Check for trigger word in staged changes
-if git diff --cached | grep -q "${TRIGGER_WORD}"; then
+if git diff --cached | grep -q -i "${TRIGGER_WORD}"; then
     echo "Commit rejected: '${TRIGGER_WORD}' found in staged changes."
     exit 1
 fi
